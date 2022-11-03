@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* 颜色 */
+/*  */
+body, div, ul, ol, li, h1, h2, h3, h4, h5, p, span, b, i, em {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+:root {
+  --colorFF: #09d2a3;
+}
+
+/* 当系统变为暗主题时也自动变为暗主题，无需人工干预 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colorFF: #fcc;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0 auto;
+  background-size: 100%;
+  min-height: 100%;
+  font-family: PingHei, "Helvetica Neue", Helvetica, "microsoft yahei";
+  color: var(--color33);
+  font-size: 14px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+input,
+textarea {
+  font-family: PingFang SC, Lantinghei SC, "Helvetica Neue", Helvetica, STHeiTi, "Microsoft Yahei", sans-serif;
+}
+
+input:focus,
+select {
+  outline: 0;
+}
+
+select,
+textarea {
+  resize: none;
+}
+select:focus,
+textarea:focus {
+  outline: 0;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+li,
+ul {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  border: 0;
+  text-decoration: none;
+  color: #666;
+}
+a img {
+  border: 0;
+  width: 100%;
+  pointer-events: none;
+  display: block;
+}
+
+img {
+  pointer-events: none;
+  width: 100%;
+  display: block;
+  vertical-align: middle;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+.clearfloat {
+  zoom: 1;
+}
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+.place {
+  transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.placeX {
+  transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+}
+
+.placeY {
+  transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+article, aside, dialog, figure, footer, footer, header, menu, nav, section {
+  display: block;
+}
+
+/* ------- color ------- */
+/* ------- size ------- */
+/* --------  -------- */
+/*     宽       高    字体大小   颜色      圆角    背景类型   背景  是否有边框         边框样式          *//*# sourceMappingURL=variables.css.map */
