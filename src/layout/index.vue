@@ -2,12 +2,8 @@
   <!-- 标题栏 -->
   <HeaderBar></HeaderBar>
   <!-- 组件 -->
-  <PullRefresh
-    v-model="loading"
-    @refresh="onRefresh"
-    @change="onChange"
-    :head-height="70"
-  >
+  <PullRefresh v-model="loading" @refresh="onRefresh" @change="onChange"  :head-height="70">
+    
     <!-- 下拉提示，通过 scale 实现一个缩放效果 -->
     <template #pulling="props">
       <img
@@ -16,15 +12,21 @@
         :style="{ transform: `scale(${props.distance / 70})` }"
       />
     </template>
-
+    
     <!-- 释放提示 -->
     <template #loosing>
-      <img class="doge" src="src/assets/load_img/img_12.png" />
+      <img
+        class="doge"
+        src="src/assets/load_img/img_12.png"
+      />
     </template>
 
     <!-- 加载提示 -->
     <template #loading>
-      <img class="doge" :src="`src/assets/load_img/img_${loosingNum}.png`" />
+      <img
+        class="doge"
+        :src="`src/assets/load_img/img_${loosingNum}.png`"
+      />
     </template>
 
     <router-view v-slot="{ Component }">
@@ -40,12 +42,12 @@
   <Login></Login>
 </template>
 <script setup>
-import HeaderBar from '@/components/frame/HeaderBar.vue';
-import TabBar from '@/components/frame/TabBar.vue';
-import Login from '@/components/login/Login.vue';
+import HeaderBar from "@/components/frame/HeaderBar.vue";
+import TabBar from "@/components/frame/TabBar.vue";
+import Login from "@/components/login/Login.vue";
 import { PullRefresh } from 'vant';
-import { onMounted, ref } from 'vue-demi';
-import { useRouter } from 'vue-router';
+import { onMounted, ref } from "vue-demi";
+import { useRouter } from "vue-router";
 
 const $router = useRouter();
 const loading = ref(false);
@@ -53,36 +55,39 @@ const lengthImg = ref(1);
 const loosingNum = ref(1);
 
 const onRefresh = () => {
-  console.log(lengthImg.value);
-  setTimeout(() => {
-    $router.go(0);
-    loading.value = false;
-  }, 1000);
-};
+  console.log(lengthImg.value)
+    setTimeout(() => {
+      $router.go(0);
+      loading.value = false;
+    }, 1000);
+  };
 
-const onChange = (e) => {
+const onChange = (e) =>{
   lengthImg.value++;
-  lengthImg.value = lengthImg.value > 16 ? 1 : lengthImg.value++;
-  if (e.distance < 10) {
+  lengthImg.value = lengthImg.value > 16? 1:lengthImg.value++;
+  if(e.distance < 10){
     clearInterval(loosingFun);
   }
-};
+}
 
-const loosingFun = onMounted(() => {
+const loosingFun = onMounted(()=>{
   loosingNum.value++;
-  setInterval(() => {
+  setInterval(()=>{
     loosingNum.value++;
-    loosingNum.value = loosingNum.value > 16 ? 1 : loosingNum.value++;
-  }, 40);
-});
+    loosingNum.value = loosingNum.value > 16? 1:loosingNum.value++;
+  },40)
+})
+
+
+
 </script>
 <style lang="scss">
 .van-pull-refresh {
-  min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 60px);
 }
-.doge {
-  width: auto;
+.doge{
+  width:auto;
   height: 50px;
-  margin: 10px auto 0;
+  margin:10px auto 0;
 }
 </style>

@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router'
 
-import Layout from '@/layout/index.vue';
+import Layout from '@/layout/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       component: Layout,
-      children: [
+      children:[
         {
           path: '/',
           meta: {
@@ -18,13 +18,13 @@ const router = createRouter({
             keepAlive: true,
           },
           component: () => import('@/views/HomeView.vue'),
-        },
-      ],
+        }
+      ]
     },
     {
       path: '/list',
       component: Layout,
-      children: [
+      children:[
         {
           path: '/list',
           meta: {
@@ -33,14 +33,14 @@ const router = createRouter({
             isNavBar: true,
             keepAlive: false,
           },
-          component: () => import('../views/list.vue'),
-        },
-      ],
+          component: () => import('../views/list.vue')
+        }
+      ]
     },
     {
       path: '/:pathMatch(.*)*',
       component: Layout,
-      children: [
+      children:[
         {
           path: '/:pathMatch(.*)*',
           meta: {
@@ -49,19 +49,21 @@ const router = createRouter({
             keepAlive: false,
             isNavBar: true,
           },
-          component: () => import('../views/NotPage.vue'),
-        },
-      ],
-    },
-  ],
-});
+          component: () => import('../views/NotPage.vue')
+        }
+      ]
+    }
+  ]
+})
 
 // router.afterEach((to, from, next) => {
 //   console.log(isNavBar)
 // })
 
+
 // router.beforeEach((to, from, next) => {
 //   console.log(to)
 // })
 
-export default router;
+
+export default router
