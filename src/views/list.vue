@@ -1,5 +1,5 @@
 <template>
-  <div>列表列表列表</div>
+  <div>列表-列表</div>
 </template>
 <script setup></script>
 <style lang="scss" scoped></style>
