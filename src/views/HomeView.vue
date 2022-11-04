@@ -1,4 +1,3 @@
-
 <template>
   <UserPublic>
     <ul class="tabList">
@@ -33,12 +32,12 @@
 </template>
 
 <script setup>
-import UserPublic from "@/components/userPublic/UserPublic.vue";
-import SvipPage from "@/components/homeTab/svipPage.vue";
-import GiftBag from "@/components/giftBag/giftBag.vue";
-import Coupon from "@/components/coupon/coupon.vue";
-import { reactive, ref } from "vue";
-import { userMessgeStore } from "@/stores/counter";
+import UserPublic from '@/components/userPublic/UserPublic.vue';
+import SvipPage from '@/components/homeTab/svipPage.vue';
+import GiftBag from '@/components/giftBag/giftBag.vue';
+import Coupon from '@/components/coupon/coupon.vue';
+import { reactive, ref } from 'vue';
+import { userMessgeStore } from '@/stores/counter';
 
 const userMessge = userMessgeStore();
 
@@ -48,7 +47,7 @@ const isShowLogin = () => {
   userMessge.setShowLogin(true);
 };
 
-const tabList = reactive(["SVIP福利", "礼包中心", "代金券"]);
+const tabList = reactive(['SVIP福利', '礼包中心', '代金券']);
 
 let tabCheckBtn = (i) => {
   tabIdx.value = i;
@@ -76,7 +75,7 @@ let tabCheckBtn = (i) => {
     &:nth-child(2) {
       span {
         &::after {
-          content: "";
+          content: '';
           top: 50%;
           width: 1px;
           height: 14px;
@@ -90,7 +89,7 @@ let tabCheckBtn = (i) => {
       }
     }
     &::after {
-      content: "";
+      content: '';
       bottom: 0;
       left: 0;
       width: 100%;
@@ -120,7 +119,7 @@ let tabCheckBtn = (i) => {
 .tabContent {
   padding: 0 12px 10px;
 }
-.tabCoupon{
+.tabCoupon {
   background: var(--tab-coupon-bg);
   min-height: 77.9vh;
 }
@@ -137,4 +136,3 @@ let tabCheckBtn = (i) => {
   opacity: 0;
 }
 </style>
-
