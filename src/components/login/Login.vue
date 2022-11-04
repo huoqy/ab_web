@@ -99,11 +99,11 @@
   </Transition>
 </template>
 <script setup>
-import Layer from "@/components/layer/Layer.vue";
-import { reactive, ref, toRefs, watch } from "vue";
-import { userMessgeStore } from "@/stores/counter";
-import { Messages } from "@/util/generalComponents.js";
-import { useRoute, useRouter } from "vue-router";
+import Layer from '@/components/layer/Layer.vue';
+import { reactive, ref, toRefs, watch } from 'vue';
+import { userMessgeStore } from '@/stores/counter';
+import { Messages } from '@/util/generalComponents.js';
+import { useRoute, useRouter } from 'vue-router';
 
 const isShowQuickLogin = ref(false);
 let codeTime;
@@ -118,28 +118,27 @@ const closeLayerBtn = (e) => {
   accountMsg.password = '';
 };
 
-
 /* 切换登录方式 */
 const checkLoginMode = ref(true);
 const checkLoginModeBtn = (e) => {
   checkLoginMode.value = !checkLoginMode.value;
-  accountMsg.password = "";
+  accountMsg.password = '';
   accountMsg.mobile = !/^1[3456789]\d{9}/.test(accountMsg.mobile)
-    ? ""
+    ? ''
     : accountMsg.mobile;
 };
 
 /* 获取验证码 */
 const countTimeDown = ref(60);
 let getCodeBtn = () => {
-  if( accountMsg.mobile == ''){
-    Messages({ type: "error", text: `手机号不能空` });
+  if (accountMsg.mobile == '') {
+    Messages({ type: 'error', text: `手机号不能空` });
     return;
-  }else if(!/^1[3456789]\d{9}/.test(accountMsg.mobile)){
-    Messages({ type: "error", text: `手机号码有误，请重填` });
+  } else if (!/^1[3456789]\d{9}/.test(accountMsg.mobile)) {
+    Messages({ type: 'error', text: `手机号码有误，请重填` });
     return;
   }
-  Messages({ type: "success", text: `短信发送成功` });
+  Messages({ type: 'success', text: `短信发送成功` });
   countTimeDown.value--;
   codeTime = setInterval(() => {
     countTimeDown.value--;
@@ -152,20 +151,19 @@ let getCodeBtn = () => {
 
 /* 登录信息 */
 let accountMsg = reactive({
-  account: "",
-  mobile: "",
-  password: "",
-  imei: "123",
-  app_key: "qh97",
+  account: '',
+  mobile: '',
+  password: '',
+  imei: '123',
+  app_key: 'qh97',
 });
-
 
 // 登录提交按钮
 const loginBtn = () => {
   // console.log( tipsText.value)
   if (isLoginMsgEmpty()) {
-    console.log("登录信息: ", accountMsg);
-    Messages({ type: "success", text: `登录成功` });
+    console.log('登录信息: ', accountMsg);
+    Messages({ type: 'success', text: `登录成功` });
   }
 };
 
@@ -174,25 +172,22 @@ const isAgreementCheck = ref(false);
 const isAgree = ref(false);
 let isLoginMsgEmpty = () => {
   let { mobile, password } = accountMsg;
-  if (mobile == "") {
+  if (mobile == '') {
     Messages({
-      type: "error",
-      text: `${checkLoginMode.value ? "账号或" : ""}手机号不能为空`,
+      type: 'error',
+      text: `${checkLoginMode.value ? '账号或' : ''}手机号不能为空`,
     });
     return false;
-  } else if (
-    !checkLoginMode.value &&
-    !/^1[3456789]\d{9}/.test(mobile)
-  ) {
-    Messages({ type: "error", text: `手机号码有误，请重填` });
-  } else if (password == "") {
+  } else if (!checkLoginMode.value && !/^1[3456789]\d{9}/.test(mobile)) {
+    Messages({ type: 'error', text: `手机号码有误，请重填` });
+  } else if (password == '') {
     Messages({
-      type: "error",
-      text: `${checkLoginMode.value ? "密码" : "验证码"}不能为空`,
+      type: 'error',
+      text: `${checkLoginMode.value ? '密码' : '验证码'}不能为空`,
     });
     return false;
   } else if (!isAgreementCheck.value) {
-    Messages({ type: "error", text: `请同意协议` });
+    Messages({ type: 'error', text: `请同意协议` });
     agreeToAgreement();
     return false;
   } else {
@@ -217,8 +212,8 @@ let checkAgreementBtn = () => {
 const mobileInput = ref(null);
 const passwordInput = ref(null);
 let clearInputIconBtn = (e) => {
-  accountMsg[e] = "";
-  if (e == "mobile") {
+  accountMsg[e] = '';
+  if (e == 'mobile') {
     mobileInput.value.focus();
   } else {
     passwordInput.value.focus();
@@ -322,7 +317,7 @@ watch(
       100%,
       40px,
       14px,
-      var(--header-bar),
+      var(--login-text-color),
       6px,
       0,
       var(--btn-color),

@@ -3,7 +3,7 @@
 /* 白/暗主题颜色变化 */
 body,
 div {
-  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* 默认主题-颜色 */
@@ -19,33 +19,34 @@ div {
   --menu-name-color-active: #252525;
   --input-border-color: #eeefef;
   --login-icon-color: #333333;
+  --login-text-color: #ffffff;
   --input-toast: #c8caca;
   --btn-color: #5749ef;
   --checkBox-color: #dfe0e1;
   --agreement-color: #999999;
   --checkBox-active-color: #5749ef;
   --message-color: #ffffff;
-  --message-bg: rgba(0,0,0,0.75);
+  --message-bg: rgba(0, 0, 0, 0.75);
   --home-tab-bg: #f9f9f9;
   --home-tab-after: #dfdfdf;
   --home-tab-active-bg: #ffffff;
   --level-rule-color: #4d2a08;
   --level-svip-name: #f2d4aa;
   --level-svip-text: #857867;
-  --level-title-color:#000000;
-  --level-tips-color:#b6b6bf;
+  --level-title-color: #000000;
+  --level-tips-color: #b6b6bf;
   --level-card-name-color: #2f2c27;
   --level-card-text-color: #948e86;
-  --card-bg-color: linear-gradient(130deg,#fcf4e5 5%,#fdf7f2 51%,#fff);
-  --card-bg-active-color: linear-gradient(90deg,#c2c1c0 5%,#dfd5cc 91%);
+  --card-bg-color: linear-gradient(130deg, #fcf4e5 5%, #fdf7f2 51%, #fff);
+  --card-bg-active-color: linear-gradient(90deg, #c2c1c0 5%, #dfd5cc 91%);
   --card-text-active-color: #ffffff;
   --card-img-opacity: 1;
   --coupon-bg-color: #ffffff;
   --coupon-svg-color: #ffffff;
   --coupon-horn-bg-color: #fff8f1;
-  --coupon-price-color:#bf904d;
-  --coupon-toast-color:#b1b1b9;
-  --coupon-btn-color:#462e0d;
+  --coupon-price-color: #bf904d;
+  --coupon-toast-color: #b1b1b9;
+  --coupon-btn-color: #462e0d;
   --coupon-btn-active-color: #bdbdbd;
   --diamonds-tips-color: #dac09e;
   --diamonds-btn-text-color: #4e2a08;
@@ -55,7 +56,7 @@ div {
   --new-gift-text: #8a8a8a;
   --new-gift-icon-more: #1f1f1f;
   --new-gift-line: #efefef;
-  --van-tab-active-text-color:#323233;
+  --van-tab-active-text-color: #323233;
   --my-gift-bag-copy: #0e9fff;
   --my-gift-border-dashed: #dbdbdb;
   --tab-coupon-bg: #efefef;
@@ -65,14 +66,12 @@ div {
   --van-tab-font-size: 13px;
   --van-tabs-line-height: 34px;
   --van-tabs-bottom-bar-height: 2px;
-  --van-tabs-bottom-bar-color:linear-gradient(270deg,#f5bc7d,#ff8a3c 92%);
-  --van-tabs-nav-background-color:var(--body-bg-color);
-  
+  --van-tabs-bottom-bar-color: linear-gradient(270deg, #f5bc7d, #ff8a3c 92%);
+  --van-tabs-nav-background-color: var(--body-bg-color);
 }
 
-
 /* 暗-主题 */
-:root[theme="dark"] {
+:root[theme='dark'] {
   --body-bg-color: #141414;
   --header-bar: #1e1e1e;
   --header-color: #fff;
@@ -82,34 +81,35 @@ div {
   --menu-icon-color-active: #fbc624;
   --menu-name-color-active: #fbc624;
   --input-border-color: #343434;
-  --login-icon-color: #5c5c5c;
+  --login-icon-color: #c4c4c4;
+  --login-text-color: #ffffff;
   --input-toast: #5c5c5c;
   --btn-color: #5749ef;
   --checkBox-color: #5a5a5a;
   --checkBox-active-color: #5749ef;
   --agreement-color: #999999;
   --message-color: #ffffff;
-  --message-bg: rgba(0,0,0,0.75);
+  --message-bg: rgba(0, 0, 0, 0.75);
   --home-tab-bg: #383838;
   --home-tab-after: #5f5f5f;
   --home-tab-active-bg: #2b2b2b;
   --level-rule-color: #4d2a08;
   --level-svip-name: #f2d4aa;
   --level-svip-text: #857867;
-  --level-title-color:#ececec;
-  --level-tips-color:#575757;
+  --level-title-color: #ececec;
+  --level-tips-color: #575757;
   --level-card-name-color: #e9e9e9;
   --level-card-text-color: #948e86;
-  --card-bg-color: linear-gradient(130deg,#2d2d2d 5%,#2e2e2e 51%,#383838);
-  --card-bg-active-color: linear-gradient(90deg,#444444 5%,#49433f 91%);
+  --card-bg-color: linear-gradient(130deg, #2d2d2d 5%, #2e2e2e 51%, #383838);
+  --card-bg-active-color: linear-gradient(90deg, #444444 5%, #49433f 91%);
   --card-text-active-color: #bfbdbd;
   --card-img-opacity: 0.15;
   --coupon-bg-color: #383838;
   --coupon-horn-bg-color: #3c3c3c;
   --coupon-svg-color: #5f5d56;
-  --coupon-price-color:#bf904d;
-  --coupon-toast-color:#b1b1b9;
-  --coupon-btn-color:#462e0d;
+  --coupon-price-color: #bf904d;
+  --coupon-toast-color: #b1b1b9;
+  --coupon-btn-color: #462e0d;
   --coupon-btn-active-color: #252525;
   --diamonds-tips-color: #dac09e;
   --diamonds-btn-text-color: #4e2a08;
@@ -119,30 +119,12 @@ div {
   --new-gift-text: #616161;
   --new-gift-icon-more: #525252;
   --new-gift-line: #1f1f1f;
-  --van-tab-active-text-color:#a4a4a4;
+  --van-tab-active-text-color: #a4a4a4;
   --my-gift-bag-copy: #0088e2;
   --my-gift-border-dashed: #303030;
   --tab-coupon-bg: #141414;
   --coupon-tisps-bg: #37290d;
-  
-  
-  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* 通用背景色 */
 html,
